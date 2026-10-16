@@ -1,5 +1,5 @@
 a = int(input("Enter the number of paint tins: "))
-s = 0
+total = 0
 below = 0
 inrange = 0
 above = 0
@@ -12,7 +12,7 @@ def classify(b):
         return "Above range"
 for i in range(a):
     b = int(input("Enter the tile width: "))
-    s += b
+    total += b
     cat = classify(b)
     print(cat)
     if cat == "Below range":
@@ -21,10 +21,10 @@ for i in range(a):
         inrange += 1
     else:
         above += 1
-def calculate_average(total, count):
-    return total / count
-avg = calculate_average(s, a)
-print(f"Total width: {s} ml")
+def calculate_average(total, a):
+    return total / a
+avg = calculate_average(total, a)
+print(f"Total width: {total} ml")
 print(f"Average width: {avg} ml")
 print(f"Below range: {below}")
 print(f"In range: {inrange}")
